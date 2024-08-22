@@ -24,7 +24,10 @@ async function buildUrl() {
     const spanDataId = $(divDataTag).find('span[data-id]')
       .filter((_, el) => el.attribs['data-id'].match(/.+21.+/g))
     const validCharacter = $(spanDataId).find('i.char[value]')[0]?.attribs?.value
-    url += validCharacter
+    
+    if (validCharacter) {
+      url += validCharacter
+    }
   })
 
   return url
